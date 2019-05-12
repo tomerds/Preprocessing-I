@@ -21,7 +21,8 @@ time, mark, audio, video {
 	padding: 0;
 	border: 0;
 	font-size: 100%;
-	font: inherit;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 500;
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
@@ -53,7 +54,264 @@ table {
     box-sizing: border-box;
 }
 
+@color: #09CECE;
+@background-color: rgba(9, 206, 206, 0.3);//0.226
+@nav-color: rgba(9, 206, 206, 0.98);
+@border-background-color: #C8ECEC;
+
+@border-height: 75px;
+
 html, body {
-    height: 100%;
+	height: 100%;
+	
 }
 
+.container1 {
+	height: 100%;
+	min-height: 800px;
+	background-color: @background-color;
+}
+
+.container2 {
+	height: 100%;
+	min-height: 800px;
+	background-color: @background-color;
+}
+
+h1 {
+	font-size: 2rem;
+}
+
+.nameColor {
+	color: @color;
+	font-weight: bold; 
+}
+
+header {	
+	z-index: 100000;
+	width: 100%;
+	height: 120px;
+	position: fixed;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: @nav-color;
+	color: white;
+	box-shadow: 0 2px 2px -2px rgba(0,0,0,.2);
+
+	.nameHeader {
+		margin-left: 5%;
+		
+		h1 {
+			margin-bottom: 20px;
+		}
+	}
+
+	ul {
+		@media (max-width: 500px){	
+			display: none;
+		}
+		width: 30%;
+		display: flex;
+		justify-content: space-between;
+		margin-right: 5%;
+
+		li {
+			width: auto;
+			a {
+				text-decoration: none;
+				color: white;
+			}
+		}
+	}
+}
+
+.seperator {
+	height:200px;
+}
+
+
+.section1 {
+
+	@media (max-width:500px) {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		height: 1000px;
+		align-items: center;
+		min-width:0;
+		
+	}
+
+	margin: 0 auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 80%;
+	background-color: white;
+	height: 400px;
+	min-width: 820px;
+	max-width: 1000px;
+	box-shadow: 0px 0px 7px 1px rgba(0,0,0,0.55);
+
+	// .text {
+	// 	width:30%;
+	// 	border: solid;
+	// }
+
+
+	.profile {
+		height:400px;
+		box-shadow: 0px 0px 7px 1px rgba(0,0,0,0.55), 0px 0px 0px 0px rgba(0,0,0,0);
+		z-index: 2;
+
+		@media (max-width:500px) {
+			margin-top: 100px;
+		}
+	}
+
+	.information {
+
+		@media (max-width: 500px) {
+			height: 600px;
+			width: 100%;
+			background-color: white;
+			
+		}
+		
+		width: 60%;
+		@padding: 40px;
+		height: 400px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		// border: solid;
+
+		
+		.information-details {
+			padding: @padding;
+			padding-bottom: 0;
+			
+			.information-details-name {
+				height: 100px;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-around;
+				border-bottom: 2px solid #C8ECEC;
+				
+			}
+
+			.table {
+				height: 190px;
+				padding-top: 30px;
+			}
+
+		}
+
+		.icons {
+			background-color: @border-background-color;
+			height: @border-height;
+
+			img {
+				height: 45px;
+				margin-top: 15px;
+				margin-left: @padding;
+				
+			}
+		}
+	}
+
+}
+
+
+.table {
+	th {
+		height: 1.6rem;
+		float: left;
+		
+	}
+
+	.column1 {
+		margin-right: 40px;
+
+	}
+}
+
+.seperator2 {
+	height: 400px;
+}
+
+.section2 {
+
+	@media (max-width:500px) {
+		display: none;
+		
+	}
+
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: stretch;
+	width: 80%;
+	background-color: white;
+	height: 400px;
+	min-width: 820px;
+	max-width: 1000px;
+	box-shadow: 0px 0px 7px 1px rgba(0,0,0,0.55);
+
+	.boxes {
+		display: flex;
+		width:100%;
+		justify-content: space-around;
+	
+
+		.text {
+		
+			width: 30%;
+	
+			height: 325px;
+			padding-top: 20px;
+
+
+			.text-head {
+				font-size: 1.3rem;
+				font-weight: 600;
+				padding-bottom: 10px;
+			}
+
+			.company {
+				display: flex;
+	
+				font-size: 1.3rem;
+				padding-bottom: 10px;
+
+				img {
+					height: 1.3rem;
+					margin-right: 5px;
+				}
+			}
+
+			h3 {
+				padding-bottom: 10px;
+			}
+
+			p {
+				padding-bottom: 5px;
+				font-size: 0.92rem;
+				padding-right: 5%;
+			}
+		}
+	}
+
+	.experienceHeader {
+		width: 100%;
+		height: @border-height;
+		background-color: @border-background-color;
+
+		h1 {
+			margin-top: 20px;
+			margin-left: 20px;
+			color: white;
+		}
+	}
+}
